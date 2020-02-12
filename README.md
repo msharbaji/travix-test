@@ -84,3 +84,11 @@ Deploy Ingress resource:
 Step 3: Access Application from browser:
        Application will be available in Load balancer ip address of ingress controller.
 
+Testing: Load sample data to Mysql
+
+      # curl http://<Loadbalancer_ip>/dataloader.php
+      
+ Testing api:
+ 
+      # curl http://<Loadbalancer_ip>/
+
