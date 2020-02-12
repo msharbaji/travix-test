@@ -1,3 +1,9 @@
+Introduction:
+
+This is a short description of the commands executed while deploying the test application in kubernetes with GCP. 
+
+There is a separate detailed documentation of the entire process with step by step explanation to be shared in email.
+
 Step 1: Setup Cluster in GKE
 
 Goto terraform folder and use the provider definition(provider.tf) and cluster code(gke-cluster.tf) for cluster creation.
@@ -16,7 +22,7 @@ Create Stateful App(DB):
 
 Create Persistent volume: ‘Persistent volume claim’ and ‘storage class’ definition for MySQL data volume are mysql-pv.yml and Storageclass.yml respectively
 
-Navigate to docker-files folder and run below commands to build imaged for mysql:
+Navigate to docker-files folder and run below commands to build image for mysql:
 
        #docker build -t mysql-test .
        #docker tag <image ID> username/mysql-test:latest
@@ -49,6 +55,7 @@ Autoscaling for Application:
         # kubectl apply -f autoscale.yml
 
 Nginx sidecar deployment:
+
 Create docker image for nginx reverse proxy:
 
         #docker build -t nginx-rinil .
