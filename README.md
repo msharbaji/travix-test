@@ -30,6 +30,9 @@ Deploy MySQL Service:
        
        #kubectl apply -f mysql-deployment.yml
 
+
+PHP-Apache Deployment:
+
 Create Docker Image for php-apache:
 
         --Run From docker-files--
@@ -37,7 +40,7 @@ Create Docker Image for php-apache:
         #docker tag <image ID> username/php-apache:latest
         #docker push username/php-apache:latest
 
-PHP-Apache Deployment:
+Deploy php-apache application:
 
         #kubectl apply -f app-api-apache.yml
 
