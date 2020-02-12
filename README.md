@@ -12,7 +12,9 @@ Step 2: Implementation of test Architecture:
 
 Navigate to kube-files folder for all kubernetes yml files.
 
-Create Stateful App(DB): Create Persistent volume: ‘Persistent volume claim’ and ‘storage class’ definition for MySQL data volume are mysql-pv.yml and Storageclass.yml respectively
+Create Stateful App(DB): 
+
+Create Persistent volume: ‘Persistent volume claim’ and ‘storage class’ definition for MySQL data volume are mysql-pv.yml and Storageclass.yml respectively
 
 Navigate to docker-files folder and run below commands to build imaged for mysql:
 
@@ -29,6 +31,7 @@ Deploy MySQL Service:
        #kubectl apply -f mysql-deployment.yml
 
 Create Docker Image for php-apache:
+
         --Run From docker-files--
         #docker build -t php-apache .
         #docker tag <image ID> username/php-apache:latest
@@ -54,12 +57,14 @@ Deploy nginx sidecar:
         #kubectl apply -f app-sidecar-nginx.yml
 
 Ingress controller/LB Deployment
+
         Initialize helm:
         # kubectl create serviceaccount --namespace kube-system tiller
         # kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
         # helm init --service-account tiller
 
  install nginx ingress controller:
+ 
         #helm install --name nginx-ingress stable/nginx-ingress --set rbac.create=true --set controller.publishService.enabled=true
       
 Deploy Ingress resource:
