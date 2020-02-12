@@ -15,11 +15,13 @@ Navigate to kube-files folder for all kubernetes yml files.
 Create Stateful App(DB): We need to create a mysql DB service with persistent volume to meet the requirement here.
        Create Persistent volume: ‘Persistent volume claim’ and ‘storage class’ definition for MySQL data volume are mysql-pv.yml and     Storageclass.yml respectively
 
-       Deploy the code to create persistent volume for mysql:
+Deploy the code to create persistent volume for mysql:
+
        # kubectl apply -f mysql-pv.yml
 
-       Build docker image for mysql:
-       Navigate to docker-files folder and run below commands:
+Build docker image for mysql:
+Navigate to docker-files folder and run below commands:
+
        #docker build -t mysql-test .
        #docker tag <image ID> username/mysql-test:latest
        #docker push username/mysql-test:latest
